@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
+  const location = useLocation()
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -10,12 +13,12 @@ export default function Header() {
           <span></span>
         </button>
 
-        <a href="/" className="logo">im.<span>frame</span></a>
+        <Link to="/" className="logo">im.<span>frame</span></Link>
 
         <nav>
           <ul className="nav-menu">
-            <li><a href="#configurator">ФОТОКНИГИ</a></li>
-            <li><a href="#">ФОТОДРУК</a></li>
+            <li><Link to="/photobook" style={location.pathname === '/photobook' || location.pathname === '/' ? {color: '#c5a55a'} : {}}>ФОТОКНИГИ</Link></li>
+            <li><Link to="/print" style={location.pathname === '/print' ? {color: '#c5a55a'} : {}}>ФОТОДРУК</Link></li>
             <li><a href="#">ФОТОРАМКИ</a></li>
             <li><a href="#">ПАКУВАННЯ</a></li>
             <li><a href="#">ПОЛІГРАФІЯ</a></li>

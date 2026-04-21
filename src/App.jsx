@@ -1,27 +1,21 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Configurator from './components/Configurator'
-import Gallery from './components/Gallery'
-import ContentSection from './components/ContentSection'
-import BookTypes from './components/BookTypes'
-import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import ChatWidget from './components/ChatWidget'
+import PhotobookPage from './pages/PhotobookPage'
+import PrintPage from './pages/PrintPage'
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <Features />
-        <Configurator />
-        <Gallery />
-        <ContentSection />
-        <BookTypes />
-        <FAQ />
+        <Routes>
+          <Route path="/" element={<PhotobookPage />} />
+          <Route path="/photobook" element={<PhotobookPage />} />
+          <Route path="/print" element={<PrintPage />} />
+        </Routes>
       </main>
       <Footer />
       <ChatWidget />
